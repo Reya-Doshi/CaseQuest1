@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team NXYEN | From Handholding to Independence</title>
+    
+    <!-- Tailwind CSS (No installation needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom Animation Classes replacing Framer Motion */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .progress-bar {
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        
+        /* Graduation Model Active States */
+        .stage-card {
+            transition: all 0.3s ease;
+        }
+        .stage-card.active {
+            border-color: #22c55e; /* green-500 */
+            background-color: rgba(15, 23, 42, 0.8); /* slate-900/80 */
+            box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
+        }
+        .stage-circle.active {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-green-200">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter text-slate-900">
+                <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="sprout" class="w-5 h-5"></i>
+                </div>
+                NXYEN
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="#problem" class="hover:text-green-600 transition-colors">The Paradox</a>
+                <a href="#model" class="hover:text-green-600 transition-colors">Graduation Model</a>
+                <a href="#strategy" class="hover:text-green-600 transition-colors">Strategy</a>
+                <a href="#impact" class="hover:text-green-600 transition-colors">Impact</a>
+            </div>
+            <a href="#impact" class="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-slate-800 transition-colors shadow-lg">
+                Our Solution
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal active">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold border bg-blue-100 text-blue-800 border-blue-200">
+                CaseQuest – E-Summit IIT Roorkee
+            </span>
+            <h1 class="mt-6 text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                From Handholding <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
+                    To Independence
+                </span>
+            </h1>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                We don't just build FPOs. We build profitable, self-sustaining agri-businesses. 
+                Moving beyond grants to true market integration.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#problem" class="flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg shadow-green-200 hover:-translate-y-1">
+                    See The Problem <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#model" class="flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all hover:-translate-y-1">
+                    View Our Model
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-12 reveal">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-red-600 font-bold mb-4">
+                        <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                        THE DIAGNOSIS
+                    </div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">India's FPO Paradox</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Over 8,000 FPOs have been created with institutional support. They are excellent social institutions, but structurally weak businesses.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center">
+                                <i data-lucide="building-2" class="w-4 h-4"></i>
+                            </div>
+                            Only 66% are operational
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center">
+                                <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+                            </div>
+                            Majority are grant-dependent
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            Limited access to credit
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">The Success Gap</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Stat 1 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-slate-700">Total FPOs Created</span>
+                                <span class="font-bold text-slate-900">8,000+</span>
+                            </div>
+                            <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
+                                <div class="progress-bar h-full bg-slate-400" data-width="100%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-bold text-slate-700">Crossing ₹1 Cr Turnover</span>
+                                <span class="font-bold text-red-600">Only 2-3%</span>
+                            </div>
+                            <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
+                                <div class="progress-bar h-full bg-red-500" data-width="3%"></div>
+                            </div>
+                            <p class="text-xs text-red-500 mt-2 font-medium">This is the gap NXYEN solves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Root Causes Cards -->
+            <div class="grid md:grid-cols-4 gap-4 mt-12">
+                <!-- Card 1 -->
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                    <i data-lucide="trending-up" class="text-slate-400 mb-4 w-6 h-6"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Weak Model</h4>
+                    <p class="text-sm text-slate-600">Aggregation only. Thin margins (3-5%). No value add.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                    <i data-lucide="users" class="text-slate-400 mb-4 w-6 h-6"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">No Market Link</h4>
+                    <p class="text-sm text-slate-600">Selling in spot markets. No branding or contracts.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                    <i data-lucide="briefcase" class="text-slate-400 mb-4 w-6 h-6"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Mgmt Gaps</h4>
+                    <p class="text-sm text-slate-600">No professional CEO. Semi-collective decisions.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-6 bg-slate-50 rounded-xl border border-slate-100 hover:-translate-y-1 transition-transform duration-300">
+                    <i data-lucide="bar-chart-3" class="text-slate-400 mb-4 w-6 h-6"></i>
+                    <h4 class="font-bold text-slate-900 mb-2">Financial Fragility</h4>
+                    <p class="text-sm text-slate-600">Irregular cash flow. Poor working capital planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graduation Model Section -->
+    <section id="model" class="py-24 px-4 md:px-8 max-w-7xl mx-auto my-12 bg-slate-900 text-white rounded-3xl relative overflow-hidden reveal">
+        <!-- Background blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="relative z-10 text-center mb-16">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold border bg-green-100 text-green-800 border-green-200">The Solution</span>
+            <h2 class="text-4xl font-bold mt-4">The NXYEN Graduation Model</h2>
+            <p class="text-slate-400 mt-4 max-w-xl mx-auto">
+                We don't try to do everything at once. We propose a disciplined 3-stage evolution over 5 years.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative z-10">
+            <!-- Connector Line (Desktop only) -->
+            <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-800 -z-10"></div>
+
+            <!-- Stage 1 -->
+            <div onclick="setStage(1)" id="stage-1" class="stage-card bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-green-500 cursor-pointer active">
+                <div id="circle-1" class="stage-circle w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-xl mb-6 bg-slate-900 border-green-500 text-green-500 active">1</div>
+                <h3 class="text-xl font-bold mb-2">Aggregation Backbone</h3>
+                <p class="text-sm font-semibold uppercase tracking-wider text-green-400 mb-4">Volume & Trust</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Build basic cash flow through aggregation. Establish trust with farmers.</p>
+            </div>
+
+            <!-- Stage 2 -->
+            <div onclick="setStage(2)" id="stage-2" class="stage-card bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 cursor-pointer hover:bg-slate-800/50">
+                <div id="circle-2" class="stage-circle w-12 h-12 rounded-full border-2 border-slate-700 text-slate-500 flex items-center justify-center font-bold text-xl mb-6 bg-slate-900">2</div>
+                <h3 class="text-xl font-bold mb-2">Margin Expansion</h3>
+                <p class="text-sm font-semibold uppercase tracking-wider text-blue-400 mb-4">Value Addition</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Primary processing (cleaning, grading). Bulk input procurement for members.</p>
+            </div>
+
+            <!-- Stage 3 -->
+            <div onclick="setStage(3)" id="stage-3" class="stage-card bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 cursor-pointer hover:bg-slate-800/50">
+                <div id="circle-3" class="stage-circle w-12 h-12 rounded-full border-2 border-slate-700 text-slate-500 flex items-center justify-center font-bold text-xl mb-6 bg-slate-900">3</div>
+                <h3 class="text-xl font-bold mb-2">Market Integration</h3>
+                <p class="text-sm font-semibold uppercase tracking-wider text-green-400 mb-4">Buyers & Brands</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Long-term contracts. Anchor buyers. FPO branding. Full independence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl font-bold text-slate-900">Strategic Pillars</h2>
+            <p class="text-lg text-slate-600 mt-4">How we shift from "Good Institution" to "Strong Business"</p>
+        </div>
+
+        <div class="space-y-24">
+            
+            <!-- Strategy 1: Margin Expansion -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="order-2 md:order-1">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold text-slate-900 mb-6">The Margin Shift</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-slate-500">Typical Aggregation FPO</span>
+                                    <span class="text-red-500 font-bold">3-5% Margin</span>
+                                </div>
+                                <div class="h-4 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-slate-300 w-[20%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-slate-900 font-bold">NXYEN Value-Add FPO</span>
+                                    <span class="text-green-600 font-bold">10-15% Margin</span>
+                                </div>
+                                <div class="h-4 bg-green-100 rounded-full overflow-hidden relative">
+                                    <div class="progress-bar h-full bg-green-500" data-width="80%"></div>
+                                </div>
+                                <p class="text-xs text-green-600 mt-2 font-medium">+ Cleaning + Grading + Packing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-green-100 rounded-lg text-green-700"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900">1. Margin Expansion</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Most FPOs fail because they only aggregate. We introduce <strong>primary processing</strong> immediately. Standardised quality commands premium pricing.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex gap-3 text-slate-700">
+                            <i data-lucide="check-circle-2" class="text-green-500 shrink-0 w-5 h-5"></i>
+                            <span>Bulk input procurement (5-10% cost savings)</span>
+                        </li>
+                        <li class="flex gap-3 text-slate-700">
+                            <i data-lucide="check-circle-2" class="text-green-500 shrink-0 w-5 h-5"></i>
+                            <span>Reduce intermediaries through direct processing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Strategy 2: Market Access -->
+            <div class="grid md:grid-cols-2 gap-12 items-center reveal">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2 bg-blue-100 rounded-lg text-blue-700"><i data-lucide="users" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900">2. Market Access Strategy</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        We flip the model. Instead of "Produce then Sell", we use a <strong>Buyer-First</strong> approach. We sell solutions, not just raw produce.
+                    </p>
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-bold text-red-500 mb-2 flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4"></i> Old Way</h4>
+                                <p class="text-sm text-slate-500">Spot Markets</p>
+                                <p class="text-sm text-slate-500">Unstable Revenue</p>
+                                <p class="text-sm text-slate-500">Produce-First</p>
+                            </div>
+                            <div class="border-l pl-4 border-slate-200">
+                                <h4 class="font-bold text-green-600 mb-2 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4"></i> NXYEN Way</h4>
+                                <p class="text-sm text-slate-700 font-medium">Pre-season Contracts</p>
+                                <p class="text-sm text-slate-700 font-medium">Anchor Buyers</p>
+                                <p class="text-sm text-slate-700 font-medium">Buyer-First</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl text-white">
+                    <h4 class="font-bold text-lg mb-6 text-center">The NXYEN Sales Funnel</h4>
+                    <div class="space-y-2">
+                        <div class="bg-slate-800 p-3 rounded-lg text-center text-sm border border-slate-700 mx-8">Spot Market (Minimal)</div>
+                        <div class="bg-slate-700 p-3 rounded-lg text-center text-sm border border-slate-600 mx-4">Wholesale Mandis</div>
+                        <div class="bg-green-600 p-4 rounded-lg text-center font-bold shadow-lg shadow-green-900/50 hover:scale-105 transition-transform">Contracted Anchor Buyers</div>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-4">Target: 70% revenue from Contracts</p>
+                </div>
+            </div>
+
+            <!-- Strategy 3: Governance & Tech -->
+            <div class="grid md:grid-cols-3 gap-6 reveal">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mb-4">
+                        <i data-lucide="building-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Professional CEO</h3>
+                    <p class="text-sm text-slate-600">
+                        Moving away from volunteer management. We implement CEOs with <strong>performance-linked incentives</strong> tied to turnover and cash surplus.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-4">
+                        <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Financial Discipline</h3>
+                    <p class="text-sm text-slate-600">
+                        Rolling cash-flow planning. Mapping working capital cycles. Prioritizing <strong>profitability over growth</strong> in the early stages.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-4">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Low-Cost Tech</h3>
+                    <p class="text-sm text-slate-600">
+                        Digital member records and simple ERP for inventory. Use tech to <strong>reduce leakage</strong>, not to add complexity.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Policy & Impact Section -->
+    <section id="impact" class="bg-green-900 text-white rounded-t-[3rem] mt-20 pb-32 pt-20 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 reveal">
+            
+            <!-- Policy Recommendations -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8">Policy Recommendations (NABARD)</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-green-800 flex items-center justify-center shrink-0 border border-green-700">
+                            <span class="font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Shift to Performance</h4>
+                            <p class="text-green-200 text-sm leading-relaxed">Move from support-based to performance-based incentives.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-green-800 flex items-center justify-center shrink-0 border border-green-700">
+                            <span class="font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Milestone-Based Exit</h4>
+                            <p class="text-green-200 text-sm leading-relaxed">Handholding should have a clear exit strategy based on milestones.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-green-800 flex items-center justify-center shrink-0 border border-green-700">
+                            <span class="font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Buyer-Linked Finance</h4>
+                            <p class="text-green-200 text-sm leading-relaxed">Credit support should be linked to confirmed buyer contracts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Metrics -->
+            <div class="bg-green-800/50 p-8 rounded-3xl border border-green-700 backdrop-blur-sm">
+                <h2 class="text-2xl font-bold mb-2">Definition of Success</h2>
+                <p class="text-green-300 text-sm mb-8">Our target metrics for a Year-5 FPO</p>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-green-900/50 p-4 rounded-xl border border-green-800">
+                        <div class="text-3xl font-bold mb-1">₹1 Cr+</div>
+                        <div class="text-xs text-green-300 uppercase tracking-wide">Annual Turnover</div>
+                    </div>
+                    <div class="bg-green-900/50 p-4 rounded-xl border border-green-800">
+                        <div class="text-3xl font-bold mb-1">Positive</div>
+                        <div class="text-xs text-green-300 uppercase tracking-wide">Operating Cash Flow</div>
+                    </div>
+                    <div class="bg-green-900/50 p-4 rounded-xl border border-green-800">
+                        <div class="text-3xl font-bold mb-1">30%</div>
+                        <div class="text-xs text-green-300 uppercase tracking-wide">Non-Aggregation Rev</div>
+                    </div>
+                    <div class="bg-green-900/50 p-4 rounded-xl border border-green-800">
+                        <div class="text-3xl font-bold mb-1">100%</div>
+                        <div class="text-xs text-green-300 uppercase tracking-wide">Grant Independence</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-green-700 text-center">
+                    <p class="text-lg font-medium italic">"FPOs are good institutions. We make them good businesses."</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-950 text-green-400 py-12 px-6 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter text-white mb-4">
+                <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="sprout" class="w-5 h-5"></i>
+                </div>
+                NXYEN
+            </div>
+            <p class="mb-8 opacity-70">Team NXYEN • CaseQuest • E-Summit IIT Roorkee</p>
+            <div class="flex gap-4">
+                <span class="px-3 py-1 rounded-full border border-green-800 text-xs">Reya</span>
+                <span class="px-3 py-1 rounded-full border border-green-800 text-xs">Vaishnavi</span>
+                <span class="px-3 py-1 rounded-full border border-green-800 text-xs">Preethi</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Navigation Scroll Effect
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                nav.classList.remove('bg-transparent', 'py-6');
+            } else {
+                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+                nav.classList.add('bg-transparent', 'py-6');
+            }
+        });
+
+        // 3. Scroll Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Trigger Progress Bars only when visible
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 4. Graduation Model Tabs Logic
+        function setStage(stageNum) {
+            // Reset all
+            document.querySelectorAll('.stage-card').forEach(card => {
+                card.classList.remove('border-green-500', 'bg-slate-900', 'ring-1', 'ring-green-500/50');
+                card.classList.add('border-slate-800');
+            });
+            document.querySelectorAll('.stage-circle').forEach(circle => {
+                circle.classList.remove('border-green-500', 'text-green-500');
+                circle.classList.add('border-slate-700', 'text-slate-500');
+            });
+
+            // Activate clicked
+            const activeCard = document.getElementById(`stage-${stageNum}`);
+            const activeCircle = document.getElementById(`circle-${stageNum}`);
+            
+            activeCard.classList.remove('border-slate-800');
+            activeCard.classList.add('border-green-500', 'bg-slate-900', 'ring-1', 'ring-green-500/50');
+            
+            activeCircle.classList.remove('border-slate-700', 'text-slate-500');
+            activeCircle.classList.add('border-green-500', 'text-green-500');
+            
+            // Highlight previous steps logic (optional, keeping simple for now)
+        }
+    </script>
+</body>
+</html>
